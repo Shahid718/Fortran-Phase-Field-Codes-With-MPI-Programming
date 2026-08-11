@@ -211,7 +211,7 @@ if (rank == 0) then
         ! Place received data in correct location
     end do
 else
-    ! Other ranks send their data to master
+    ! Other ranks send their data to main
     call MPI_Send(send_buf, local_Ny * Nx, MPI_DOUBLE_PRECISION, 0, 0, &
                   MPI_COMM_WORLD, ierr)
 end if

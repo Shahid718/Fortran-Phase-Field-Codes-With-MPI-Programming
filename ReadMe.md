@@ -270,7 +270,7 @@ mpi/
 │   ├── run_grid_sweep.sh  # Batch script for grid size sweeps
 │   └── grid_sweep_results/# Results from grid sweeps
 └── model_C/               # Model C (Cahn-Hilliard + Allen-Cahn coupled)
-    ├── fd_ch_ac_mpi.f90   # MPI implementation
+    ├── main.f90           # MPI implementation
     ├── run_grid_sweep.sh  # Batch script for grid size sweeps
     └── grid_sweep_results/# Results from grid sweeps
 ```

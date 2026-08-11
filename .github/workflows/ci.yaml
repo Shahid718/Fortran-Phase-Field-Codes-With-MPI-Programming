@@ -21,12 +21,12 @@ jobs:
     - name: Install Fortran Compiler
       run: sudo apt-get install -y gfortran
 
-    - name: Build MPI Fortran Code
+    - name: Build Model A
       run: |
+        cd model_A
         mpif90 -std=gnu main.f90 -O2 -o main
-        # ... build other files ...
     
-    - name: Run MPI Tests
+    - name: Test Model A
       run: |
+        cd model_A
         mpirun -np 2 ./main
-        # ... run other test cases ...

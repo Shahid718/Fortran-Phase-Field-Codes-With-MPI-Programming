@@ -1,0 +1,6 @@
+Done steps = 1000
+Done steps = 2000
+---------------------------------
+  MPI Time    =      0.184 seconds.
+Results written to: ch.dat
+Wall clock (script-measured) = .303760508 s

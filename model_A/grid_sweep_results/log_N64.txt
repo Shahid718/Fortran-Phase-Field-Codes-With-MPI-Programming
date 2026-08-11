@@ -1,0 +1,19 @@
+Done steps = 100
+Done steps = 200
+Done steps = 300
+Done steps = 400
+Done steps = 500
+Done steps = 600
+Done steps = 700
+Done steps = 800
+Done steps = 900
+Done steps = 1000
+Done steps = 1100
+Done steps = 1200
+Done steps = 1300
+Done steps = 1400
+Done steps = 1500
+---------------------------------
+  MPI Time    =      0.040 seconds.
+Results written to: ac.dat
+Wall clock (script-measured) = 1.066509857 s

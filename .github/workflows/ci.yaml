@@ -1,0 +1,31 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mpi: [mpich, openmpi] # Test with both MPI implementations
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup MPI
+      uses: mpi4py/setup-mpi@v1
+      with:
+        mpi: ${{ matrix.mpi }}
+
+    - name: Install Fortran Compiler
+      run: sudo apt-get install -y gfortran
+
+    - name: Build MPI Fortran Code
+      run: |
+        mpif90 -std=gnu main.f90 -O2 -o main
+        # ... build other files ...
+    
+    - name: Run MPI Tests
+      run: |
+        mpirun -np 2 ./main
+        # ... run other test cases ...

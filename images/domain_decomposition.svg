@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="monospace">
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-size="20" font-weight="bold">Domain Decomposition: 128x128 Grid with 4 Processors</text>
+  
+  <!-- SERIAL GRID (left) -->
+  <text x="160" y="80" text-anchor="middle" font-size="16" font-weight="bold">SERIAL (1 Processor)</text>
+  
+  <!-- Single large grid -->
+  <rect x="60" y="100" width="200" height="400" fill="none" stroke="#333" stroke-width="2"/>
+  <rect x="60" y="100" width="200" height="400" fill="#d4e6f1" opacity="0.3"/>
+  
+  <!-- Label inside -->
+  <text x="160" y="290" text-anchor="middle" font-size="14" fill="#333">All 128 rows</text>
+  <text x="160" y="310" text-anchor="middle" font-size="14" fill="#333">1 Processor</text>
+    
+  <!-- Arrow -->
+  <line x1="280" y1="300" x2="360" y2="300" stroke="#c0392b" stroke-width="3" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <text x="320" y="280" text-anchor="middle" font-size="12" fill="#c0392b">MPI</text>
+  
+  <!-- MPI GRID (right) -->
+  <text x="540" y="80" text-anchor="middle" font-size="16" font-weight="bold">MPI (4 Processors)</text>
+  
+  <!-- Processor 0 -->
+  <rect x="420" y="100" width="240" height="100" fill="#d5e8d4" stroke="#333" stroke-width="2"/>
+  <text x="540" y="135" text-anchor="middle" font-size="14" font-weight="bold">Processor 0</text>
+  <text x="540" y="155" text-anchor="middle" font-size="12" fill="#555">Rows 1-32</text>
+  <text x="540" y="175" text-anchor="middle" font-size="12" fill="#555">(32 rows)</text>
+  
+  <!-- Processor 1 -->
+  <rect x="420" y="200" width="240" height="100" fill="#fce5cd" stroke="#333" stroke-width="2"/>
+  <text x="540" y="235" text-anchor="middle" font-size="14" font-weight="bold">Processor 1</text>
+  <text x="540" y="255" text-anchor="middle" font-size="12" fill="#555">Rows 33-64</text>
+  <text x="540" y="275" text-anchor="middle" font-size="12" fill="#555">(32 rows)</text>
+  
+  <!-- Processor 2 -->
+  <rect x="420" y="300" width="240" height="100" fill="#dae8fc" stroke="#333" stroke-width="2"/>
+  <text x="540" y="335" text-anchor="middle" font-size="14" font-weight="bold">Processor 2</text>
+  <text x="540" y="355" text-anchor="middle" font-size="12" fill="#555">Rows 65-96</text>
+  <text x="540" y="375" text-anchor="middle" font-size="12" fill="#555">(32 rows)</text>
+  
+  <!-- Processor 3 -->
+  <rect x="420" y="400" width="240" height="100" fill="#ead1dc" stroke="#333" stroke-width="2"/>
+  <text x="540" y="435" text-anchor="middle" font-size="14" font-weight="bold">Processor 3</text>
+  <text x="540" y="455" text-anchor="middle" font-size="12" fill="#555">Rows 97-128</text>
+  <text x="540" y="475" text-anchor="middle" font-size="12" fill="#555">(32 rows)</text>
+  
+  <!-- Division lines between processors -->
+  <line x1="420" y1="200" x2="660" y2="200" stroke="#333" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="420" y1="300" x2="660" y2="300" stroke="#333" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <line x1="420" y1="400" x2="660" y2="400" stroke="#333" stroke-width="1.5" stroke-dasharray="4,4"/>
+  
+  <!-- Bracket showing total -->
+  <text x="670" y="300" text-anchor="start" font-size="12" fill="#333" transform="rotate(90, 670, 300)">Total: 128 rows</text>
+  
+  <!-- Communication arrows between processors -->
+  <line x1="420" y1="150" x2="420" y2="200" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+  <line x1="420" y1="250" x2="420" y2="300" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+  <line x1="420" y1="350" x2="420" y2="400" stroke="#e74c3c" stroke-width="1.5" marker-end="url(#arrowSmall)"/>
+  
+  <defs>
+    <marker id="arrowSmall" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e74c3c"/>
+    </marker>
+  </defs>
+  
+  <!-- Communication label -->
+  <!-- <text x="410" y="305" text-anchor="end" font-size="10" fill="#e74c3c" transform="rotate(-90, 410, 305)">Halo Exchange</text> -->
+  
+</svg>

@@ -1,0 +1,31 @@
+name: Fortran MPI Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install MPI
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gfortran mpich libmpich-dev
+    
+    - name: Compile
+      run: mpif90 -std=gnu -O3 -o main main.f90
+    
+    - name: Run
+      run: mpirun -np 2 ./main
+    
+    - name: Check output
+      run: |
+        if [ -f "ch.dat" ]; then
+          echo "✅ Test passed"
+          head -n 3 ch.dat
+        else
+          echo "❌ Test failed"
+          exit 1
+        fi
